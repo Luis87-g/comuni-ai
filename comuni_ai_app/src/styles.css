@@ -1,0 +1,692 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap');
+
+:root {
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  color: #17334a;
+  background: #f3f8fa;
+  font-size: calc(16px * var(--font-scale, 1));
+}
+
+
+/* ==========================================================================
+   2. RESET Y BASE
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  min-height: 100vh;
+  background: #f3f8fa;
+}
+
+.muted {
+  color: #718896;
+}
+
+.tiny {
+  font-size: 12px;
+  max-width: 720px;
+}
+
+
+/* ==========================================================================
+   3. BARRA SUPERIOR (TOPBAR)
+   ========================================================================== */
+.topbar {
+  height: 82px;
+  background: #123c62;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  gap: 14px;
+}
+
+.topbar small {
+  color: #cce7ee;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 15px;
+  background: #14aaa6;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+
+.brand {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+.top-spacer {
+  flex: 1;
+}
+
+.profile-pill {
+  background: #ffffff1c;
+  padding: 10px 16px;
+  border-radius: 30px;
+}
+
+
+/* ==========================================================================
+   4. LAYOUT Y BARRA LATERAL (SIDEBAR)
+   ========================================================================== */
+.layout {
+  display: grid;
+  grid-template-columns: 225px 1fr;
+  min-height: calc(100vh - 132px);
+}
+
+.sidebar {
+  background: #fff;
+  border-right: 1px solid #dce8ee;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Botones de navegación */
+.nav {
+  border: 0;
+  background: transparent;
+  padding: 13px 14px;
+  text-align: left;
+  border-radius: 12px;
+  color: #37556a;
+  font: 700 15px inherit; /* OJO: declaración inválida (falta font-family), el navegador la ignora */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.nav span {
+  font-size: 20px;
+}
+
+.nav.active,
+.nav:hover {
+  background: #e4f6f5;
+  color: #087f83;
+}
+
+.side-note {
+  margin-top: auto;
+  background: #eff8fa;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #557184;
+}
+
+
+/* ==========================================================================
+   5. CONTENIDO GENERAL
+   ========================================================================== */
+.content {
+  padding: 42px clamp(20px, 5vw, 75px);
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+}
+
+.content h1 {
+  font-size: clamp(29px, 4vw, 43px);
+  line-height: 1.12;
+  margin: 10px 0 14px;
+  color: #123c62;
+}
+
+.content p {
+  color: #60798a;
+  line-height: 1.65;
+}
+
+.content label {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 9px;
+  color: #31566c;
+}
+
+.content textarea {
+  width: 100%;
+  min-height: 125px;
+  resize: vertical;
+  border: 1px solid #d4e3e9;
+  border-radius: 12px;
+  padding: 15px;
+  font: inherit;
+  color: #17334a;
+  outline-color: #07918e;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.subheading {
+  font-size: 19px;
+  margin: 30px 0 14px;
+}
+
+
+/* ==========================================================================
+   6. BIENVENIDA (WELCOME)
+   ========================================================================== */
+.welcome {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.welcome-copy {
+  padding: 20px 0;
+}
+
+.eyebrow {
+  color: #07918e;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.welcome-art {
+  background: linear-gradient(145deg, #d9f4f2, #e6f0ff);
+  border-radius: 25px;
+  min-height: 240px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.big-bubble {
+  font-size: 92px;
+}
+
+.art-caption {
+  font-weight: 800;
+  color: #087f83;
+}
+
+
+/* ==========================================================================
+   7. SELECTOR DE PERFIL
+   ========================================================================== */
+.profile-select {
+  grid-column: 1 / -1;
+  background: #fff;
+  border: 1px solid #dfebef;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.profile-select h2 {
+  font-size: 17px;
+  margin: 0 15px 0 0;
+}
+
+.profile-choice {
+  background: #f4f8fa;
+  border: 1px solid #dce8ee;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  color: #34566d;
+}
+
+.profile-choice.selected {
+  border-color: #07918e;
+  background: #e5f7f5;
+}
+
+
+/* ==========================================================================
+   8. BOTONES
+   ========================================================================== */
+.primary,
+.secondary,
+.voice {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.primary {
+  background: #078e91;
+  color: white;
+}
+
+.primary:hover {
+  background: #067477;
+}
+
+.primary:disabled {
+  opacity: .6;
+}
+
+.secondary {
+  background: #e7f1f5;
+  color: #244e67;
+}
+
+.voice {
+  background: #e9e5ff;
+  color: #5744a4;
+}
+
+
+/* ==========================================================================
+   9. TARJETAS Y FORMULARIOS
+   ========================================================================== */
+.message-card,
+.translator,
+.settings-card {
+  background: #fff;
+  border: 1px solid #dce8ee;
+  border-radius: 18px;
+  padding: 22px;
+  margin-top: 20px;
+  box-shadow: 0 5px 20px #1b4c6410;
+}
+
+.message-actions {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+
+/* ==========================================================================
+   10. SUGERENCIAS
+   ========================================================================== */
+.suggestion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.suggestion {
+  border: 1px solid #dce8ee;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  cursor: pointer;
+  color: #244e67;
+}
+
+.suggestion span:first-child {
+  font-size: 25px;
+}
+
+.suggestion b {
+  margin-left: auto;
+  color: #07918e;
+}
+
+
+/* ==========================================================================
+   11. PICTOGRAMAS
+   ========================================================================== */
+.picto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.picto {
+  background: #fff;
+  border: 1px solid #dce8ee;
+  border-radius: 15px;
+  padding: 20px 10px;
+  display: grid;
+  gap: 10px;
+  place-items: center;
+  color: #234c64;
+  cursor: pointer;
+}
+
+.picto span {
+  font-size: 38px;
+}
+
+/* Hover compartido entre pictogramas y frases */
+.picto:hover,
+.phrase:hover {
+  border-color: #07918e;
+  background: #f2fbfa;
+}
+
+
+/* ==========================================================================
+   12. FRASES
+   ========================================================================== */
+.phrase-list {
+  display: grid;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.phrase {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 16px;
+  background: white;
+  border: 1px solid #dce8ee;
+  border-radius: 12px;
+  text-align: left;
+  color: #244e67;
+  cursor: pointer;
+}
+
+.phrase > span:first-child {
+  font-size: 24px;
+}
+
+.phrase > span:nth-child(2) {
+  display: grid;
+  gap: 3px;
+}
+
+.phrase small {
+  color: #7b909d;
+}
+
+.phrase strong {
+  margin-left: auto;
+  color: #07918e;
+  font-size: 20px;
+}
+
+
+/* ==========================================================================
+   13. FILTROS
+   ========================================================================== */
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.filter-chip {
+  background: #e6f5f4;
+  color: #087f83;
+  padding: 7px 13px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* ==========================================================================
+   14. TRADUCTOR
+   ========================================================================== */
+.translator {
+  max-width: 720px;
+  display: grid;
+  gap: 15px;
+}
+
+.language-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #31566c;
+}
+
+.translation-result {
+  background: #eff8fa;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.translation-result p {
+  color: #17334a;
+}
+
+/* Select compartido entre traductor y ajustes */
+.language-row select,
+.setting select {
+  padding: 10px;
+  border: 1px solid #d4e3e9;
+  border-radius: 9px;
+  background: white;
+  color: #244e67;
+}
+
+
+/* ==========================================================================
+   15. AJUSTES
+   ========================================================================== */
+.settings-card {
+  max-width: 760px;
+}
+
+.setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e5eef1;
+}
+
+.setting:last-child {
+  border: 0;
+}
+
+.setting small {
+  display: block;
+  color: #718896;
+  margin-top: 5px;
+}
+
+.setting input {
+  width: 22px;
+  height: 22px;
+  accent-color: #078e91;
+}
+
+.setting-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.setting-controls button {
+  border: 1px solid #cbdde4;
+  background: #f5fafb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #244e67;
+}
+
+
+/* ==========================================================================
+   16. NOTIFICACIÓN (NOTICE)
+   ========================================================================== */
+.notice {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  background: #123c62;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px #123c6240;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  max-width: min(500px, 90vw);
+}
+
+.notice button {
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* ==========================================================================
+   17. FOOTER
+   ========================================================================== */
+footer {
+  background: #123c62;
+  color: #d7e9ef;
+  padding: 17px 5%;
+  font-size: 13px;
+  text-align: center;
+}
+
+
+/* ==========================================================================
+   18. ALTO CONTRASTE
+   ========================================================================== */
+.high-contrast {
+  background: #fff;
+  color: #000;
+}
+
+.high-contrast .content h1,
+.high-contrast .content p,
+.high-contrast .nav {
+  color: #000;
+}
+
+.high-contrast .message-card,
+.high-contrast .translator,
+.high-contrast .settings-card,
+.high-contrast .phrase,
+.high-contrast .picto,
+.high-contrast .suggestion {
+  border: 2px solid #000;
+}
+
+
+/* ==========================================================================
+   19. RESPONSIVE (MÓVIL)
+   ========================================================================== */
+@media (max-width: 760px) {
+
+  /* Topbar */
+  .topbar {
+    padding: 0 16px;
+    height: 72px;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .profile-pill {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  /* Layout y sidebar (pasa a barra horizontal) */
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 8px;
+    background: #fff;
+    border-bottom: 1px solid #dce8ee;
+  }
+
+  .nav {
+    white-space: nowrap;
+    padding: 10px;
+  }
+
+  .nav span {
+    font-size: 17px;
+  }
+
+  .side-note {
+    display: none;
+  }
+
+  /* Contenido */
+  .content {
+    padding: 27px 17px;
+  }
+
+  .welcome {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-art {
+    min-height: 150px;
+  }
+
+  .big-bubble {
+    font-size: 65px;
+  }
+
+  .profile-select {
+    grid-column: auto;
+  }
+
+  .suggestion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .message-actions > * {
+    flex: 1;
+  }
+
+  /* Ajustes */
+  .setting {
+    align-items: flex-start;
+  }
+
+  .setting-controls {
+    flex-shrink: 0;
+  }
+}
